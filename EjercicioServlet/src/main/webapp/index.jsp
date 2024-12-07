@@ -6,8 +6,8 @@
         <title>Ejercicio Servlet</title>
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
         
+        <h1>Datos del Cliente</h1>
         <form action="SvUsuarios" method="POST">
             <p>
                 <label>Dni: </label>
@@ -22,7 +22,7 @@
                 <input type="type" name="apellido">
             </p>
             <p>
-                <label>Telefono: </label>
+                <label>Teléfono: </label>
                 <input type="type" name="telefono">
             </p>
             <button type="submit"> Guardar </button>

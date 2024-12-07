@@ -1,4 +1,4 @@
-//
+
 package com.mycompany.ejercicioservlet.servlets;
 
 import java.io.IOException;
@@ -12,9 +12,10 @@ import unidadLogica.ControladoraLogica;
 
 @WebServlet(name = "SvEliminar", urlPatterns = {"/SvEliminar"})
 public class SvEliminar extends HttpServlet {
-
-    ControladoraLogica controlLog = new ControladoraLogica();
     
+    ControladoraLogica controlLog = new ControladoraLogica();
+
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
@@ -23,7 +24,6 @@ public class SvEliminar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
 
@@ -32,8 +32,11 @@ public class SvEliminar extends HttpServlet {
             throws ServletException, IOException {
         
         int idEliminar = Integer.parseInt(request.getParameter("usuarioEliminar"));
-
-        controlLog.eliminarUsuario(idEliminar);
+        
+        controlLog.borrarUsuario(idEliminar);
+       
+        response.sendRedirect("index.jsp");
+        
     }
 
 

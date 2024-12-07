@@ -1,4 +1,3 @@
-
 package com.mycompany.ejercicioservlet.servlets;
 
 import java.io.IOException;
@@ -16,16 +15,16 @@ import unidadLogica.Usuario;
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
-
+    
     ControladoraLogica controlLog = new ControladoraLogica();
 
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
     }
 
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,9 +33,11 @@ public class SvUsuarios extends HttpServlet {
         listaUsuarios = controlLog.traerUsuarios();
         
         HttpSession miSesion = request.getSession();
-        miSesion.setAttribute("listaUsuarios", listaUsuarios);
+        miSesion.setAttribute("listaUsuarios",listaUsuarios);
         
         response.sendRedirect("mostrarUsuarios.jsp");
+        
+        
     }
 
 
@@ -58,9 +59,7 @@ public class SvUsuarios extends HttpServlet {
         controlLog.crearUsuario(usu);
         
         response.sendRedirect("index.jsp");
-        
     }
-
 
     @Override
     public String getServletInfo() {

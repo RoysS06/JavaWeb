@@ -7,6 +7,7 @@ import unidadLogica.Usuario;
 import unidadPersistencia.exceptions.NonexistentEntityException;
 
 
+
 public class ControladoraPersistencia {
     
     UsuarioJpaController usuJpa = new UsuarioJpaController();
@@ -19,7 +20,7 @@ public class ControladoraPersistencia {
         return usuJpa.findUsuarioEntities();
     }
 
-    public void eliminarUsuario(int idEliminar) {
+    public void borrarUsuario(int idEliminar) {
         try {
             usuJpa.destroy(idEliminar);
         } catch (NonexistentEntityException ex) {
@@ -27,16 +28,18 @@ public class ControladoraPersistencia {
         }
     }
 
-    public Usuario editarUsuario(int idEditar) {
+    public Usuario traerUsu(int idEditar) {
         return usuJpa.findUsuario(idEditar);
     }
 
-    public void modificarUsuario(Usuario usu) {
+    public void editarUsuario(Usuario usu) {
         try {
             usuJpa.edit(usu);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+
     
 }

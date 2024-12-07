@@ -15,16 +15,17 @@ public class ControladoraLogica {
         return controlPersis.traerUsuarios();
     }
 
-    public void eliminarUsuario(int idEliminar) {
-        controlPersis.eliminarUsuario(idEliminar);
+    public void borrarUsuario(int idEliminar) {
+        controlPersis.borrarUsuario(idEliminar);
     }
 
-    public Usuario editarUsuario(int idEditar) {
-        return controlPersis.editarUsuario(idEditar);
+    public Usuario traerUsu(int idEditar) {
+        return controlPersis.traerUsu(idEditar);
     }
 
-    public void modificarUsuario(Usuario usu) {
-        controlPersis.modificarUsuario(usu);
+    public void editarUsuario(Usuario usu) {
+        controlPersis.editarUsuario(usu);
     }
+
     
 }
